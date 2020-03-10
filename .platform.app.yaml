@@ -10,8 +10,8 @@ dependencies:
     yarn: '1.21.1'
     pm2: '^2.5.0'
 
-relationships:
-  mongodatabase: "mongo:mongodb"
+# relationships:
+#   mongodatabase: "mongo:mongodb"
 
 hooks:
   build: |
