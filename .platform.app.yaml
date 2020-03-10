@@ -1,0 +1,30 @@
+name: app
+type: nodejs:12
+disk: 512
+
+build:
+  flavor: none
+
+dependencies:
+  nodejs:
+    yarn: '1.21.1'
+    pm2: '^2.5.0'
+
+relationships:
+  mongodatabase: "mongo:mongodb"
+
+hooks:
+  build: |
+    yarn install
+
+web:
+  commands:
+    start: 'PM2_HOME=/app/run yarn start-prod --no-daemon'
+  locations:
+    '/':
+      passthru: true
+
+mounts:
+    run:
+        source: local
+        source_path: run
