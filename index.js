@@ -37,6 +37,8 @@ let result;
 // 	}
 // }
 
+const port = config.port || 4000
+
 const http = require('http')
 
 const hostname = 'localhost'
@@ -48,8 +50,8 @@ const server = http.createServer((req, res) => {
 })
 
 
-server.listen(config.port, hostname, () => {
-	console.log(`Server running at http://${hostname}:${config.port}/`);
+server.listen(port, hostname, () => {
+	console.log(`Server running at http://${hostname}:${port}/`);
 	// doDb().then(() => {
 	// 	if (result) { Object.keys(result).forEach(key => console.log(`Database returned ${key}:${result[key].test}`)) };
 	// });
