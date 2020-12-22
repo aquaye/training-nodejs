@@ -1,5 +1,11 @@
 const config = require("platformsh-config").config();
 
+// comment
+
+// new comment
+
+// new comment
+
 let creds;
 if (config.hasRelationship('mongodatabase')) {
 	creds = config.credentials('mongodatabase');
@@ -13,29 +19,29 @@ let collection;
 let doc;
 let result;
 
-// const doDb = async () => {
-// 	if (creds) {
-// 		MongoClient = require('mongodb').MongoClient;
+const doDb = async () => {
+	if (creds) {
+		MongoClient = require('mongodb').MongoClient;
 
-// 		// Database Name
-// 		dbName = creds.path;
+		// Database Name
+		dbName = creds.path;
 
-// 		// Create a new MongoClient
-// 		client = await MongoClient.connect(config.formattedCredentials('mongodatabase', 'mongodb'));
+		// Create a new MongoClient
+		client = await MongoClient.connect(config.formattedCredentials('mongodatabase', 'mongodb'));
 
-// 		db = client.db(dbName);
+		db = client.db(dbName);
 
-// 		collection = db.collection('test');
+		collection = db.collection('test');
 
-// 		doc = {'test': true};
+		doc = {'test': true};
 
-// 		collection.insert(doc, {w:1});
+		collection.insert(doc, {w:1});
 
-// 		result = await collection.find({}).toArray();
+		result = await collection.find({}).toArray();
 
-// 		collection.remove();
-// 	}
-// }
+		collection.remove();
+	}
+}
 
 const port = config.port || 4000
 
@@ -49,6 +55,9 @@ const server = http.createServer((req, res) => {
 	res.end('Hello World\n')
 })
 
+// add another change
+
+// yet another change
 
 server.listen(port, hostname, () => {
 	console.log(`Server running at http://${hostname}:${port}/`);
