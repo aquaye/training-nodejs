@@ -2,6 +2,8 @@ const config = require("platformsh-config").config();
 
 // new comment
 
+// new comment
+
 let creds;
 if (config.hasRelationship('mongodatabase')) {
 	creds = config.credentials('mongodatabase');
