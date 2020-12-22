@@ -1,5 +1,7 @@
 const config = require("platformsh-config").config();
 
+// comment
+
 // new comment
 
 // new comment
